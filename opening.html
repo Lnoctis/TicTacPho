@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Selection Page</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: gray;
+        }
+
+        .difficulty {
+            font-size: 100px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .color-blocks {
+            display: flex;
+            justify-content: center;
+        }
+
+        .color-block {
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .color-block:hover {
+            transform: scale(1.1);
+        }
+
+        #white { background-color: #ffe2c6; }
+        #brown { background-color: #964B00; }
+        #black { background-color: #241512; }
+    </style>
+</head>
+<body>
+    <div class="difficulty">Choose Difficulty</div>
+    
+    <div class="color-blocks">
+        <div class="color-block" id="white" onclick="redirectToPage('index.html')"></div>
+        <div class="color-block" id="brown" onclick="redirectToPage('index.html')"></div>
+        <div class="color-block" id="black" onclick="redirectToPage('index.html')"></div>
+    </div>
+
+    <script>
+        function redirectToPage(page) {
+            window.location.href = page;
+        }
+    </script>
+</body>
+</html>

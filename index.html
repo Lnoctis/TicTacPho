@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tic-Tac-Toe with Player Photos</title>
+</head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<body>
+    <div class="container">
+        <h1><span class="blue">Tic</span><span class="yellow">-Tac</span><span class="red">-Pho</span></h1>
+        
+        <label for="playerXImage" class="player-label">Player X Image: </label>
+        <input type="file" id="playerXImage" accept="image/*" />
+        <label for="playerOImage" class="player-label">Player O Image: </label>
+        <input type="file" id="playerOImage" accept="image/*" />
+
+        <div id="player-indicator-wrapper">
+            <h2>Current Player's Turn:</h2>
+            <p id="currentPlayer">X</p>
+        </div>        
+        
+        <div class="game-board" id="board">
+            <div class="cell" onclick="makeMove(0)" data-audio="audio1"></div>
+            <div class="cell" onclick="makeMove(1)" data-audio="audio1"></div>
+            <div class="cell" onclick="makeMove(2)" data-audio="audio1"></div>
+            <div class="cell" onclick="makeMove(3)" data-audio="audio1"></div>
+            <div class="cell" onclick="makeMove(4)" data-audio="audio1"></div>
+            <div class="cell" onclick="makeMove(5)" data-audio="audio1"></div>
+            <div class="cell" onclick="makeMove(6)" data-audio="audio1"></div>
+            <div class="cell" onclick="makeMove(7)" data-audio="audio1"></div>
+            <div class="cell" onclick="makeMove(8)" data-audio="audio1"></div>
+            <audio id="audio1" src="./Media/clicked.wav"></audio>
+        </div>
+
+        <div id="winner-popup">
+            <p id="winner-message"></p>
+        </div>
+        
+
+        <audio id="winSound">
+            <source src="./Media/congrats.mp3" type="audio/mp3">
+          </audio>
+
+        <audio id="drawSound" src="./Media/draw.mp3"></audio>
+
+        
+        <button class="adios" onclick="resetBoard()">Reset</button>
+        <p id="message"></p>
+    </div>
+
+    <div id="background-changer">
+        <select id="color-selector">
+            <option value="#3a2edf">Default Color</option>
+            <option value="#008000">Green</option>
+            <option value="#008080">Teal</option>
+            <option value="#800080">Purple</option>
+            <option value="#CD5C5C">IndianRed</option>
+        </select>
+    </div>
+    
+    
+</body>
+<script src="script.js"></script>
+</html>
