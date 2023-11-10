@@ -11,6 +11,8 @@ const winPatterns = [
     [2, 4, 6]
 ];
 
+// Move and Player Turn Indicator
+
 function makeMove(cellIndex) {
     if (board[cellIndex] === '' && !checkWinner()) {
         const playerImage = document.getElementById(`player${currentPlayer}Image`).files[0];
@@ -29,6 +31,8 @@ function makeMove(cellIndex) {
         currentPlayerIndicator.textContent = currentPlayer;
     }
 }
+
+// Checking Winner
 
 function checkWinner() {
     for (let pattern of winPatterns) {
@@ -62,7 +66,7 @@ function checkWinner() {
                 isBlinking = !isBlinking; // Toggle the flag
             }, 300); // Change color every 500 milliseconds
 
-            // Stop the blinking after a certain duration (e.g., 3000 milliseconds)
+            // Stop the blinking after a certain duration
             setTimeout(function() {
                 clearInterval(blinkInterval); // Stop the blinking
             }, 2000); // Adjust the duration as needed
@@ -101,6 +105,8 @@ function resetBoard() {
     currentPlayerIndicator.textContent = 'X';
 }
 
+// Player Images
+
 function loadImage(player) {
     const fileInput = document.getElementById(`player${player}Image`);
     if (fileInput.files.length > 0) {
@@ -109,6 +115,8 @@ function loadImage(player) {
         cell.innerHTML = `<img src="${imageUrl}" alt="Player ${player}" />`;
     }
 }
+
+// Audio
 
 const cells = document.querySelectorAll(".cell");
 cells.forEach(cell => {
@@ -120,6 +128,8 @@ cells.forEach(cell => {
         }
     });
 });
+
+// Color Selector
 
 const colorSelector = document.getElementById('color-selector');
 const body = document.body;

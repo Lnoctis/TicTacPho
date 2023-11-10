@@ -14,11 +14,12 @@
         <label for="playerOImage" class="player-label">Player O Image: </label>
         <input type="file" id="playerOImage" accept="image/*" />
 
+    <div class="boxes">
         <div id="player-indicator-wrapper">
             <h2>Current Player's Turn:</h2>
             <p id="currentPlayer">X</p>
-        </div>        
         
+        </div>        
         <div class="game-board" id="board">
             <div class="cell" onclick="makeMove(0)" data-audio="audio1"></div>
             <div class="cell" onclick="makeMove(1)" data-audio="audio1"></div>
@@ -31,7 +32,7 @@
             <div class="cell" onclick="makeMove(8)" data-audio="audio1"></div>
             <audio id="audio1" src="./Media/clicked.wav"></audio>
         </div>
-
+    </div>
         <div id="winner-popup">
             <p id="winner-message"></p>
         </div>
